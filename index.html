@@ -11,7 +11,7 @@
 </head>
 <nav class="navbar" style="background-color: 	#00BFFF;">
   <div class="container-fluid">
-    <img src="./Weather-icon.png" alt="Logo" width="50" height="48" class="d-inline-block align-text-top">
+    <img id="logo" src="./Weather-icon.png" alt="Logo" width="50" height="48" class="d-inline-block align-text-top">
     <h1> The Forecast </h1>
   </div>
 </nav>
@@ -19,7 +19,7 @@
 <body>
   <div class="container-fluid pb-3">
     <div class="d-grid gap-3" style="grid-template-columns: 1fr 2fr;">
-      <div class="bg-light border rounded-3">
+      <div id="searchField" class="bg-light border rounded-3">
         <h2> Search for a City: </h2>
         <div class="mb-3">
           <label for="exampleFormControlTextarea1" class="form-label"></label>
@@ -30,14 +30,14 @@
           <button class="btn btn-primary" type="button">Search</button>
         </div>
 
-        <ul class="list-group">
-          <li class="list-group-item">Columbus</li>
-          <li class="list-group-item">Cleveland</li>
-          <li class="list-group-item">Los Angeles</li>
-          <li class="list-group-item">New York City</li>
+        <ul class="list-group" id="commonCities">
+          <li class="list-group-item" id="City-1">Columbus</li>
+          <li class="list-group-item" id="City-2">Cleveland</li>
+          <li class="list-group-item" id="City-3">Los Angeles</li>
+          <li class="list-group-item" id="City-4">New York City</li>
         </ul>
       </div>
-      <div class="bg-light border rounded-3">
+      <div id="forecastField" class="bg-light border rounded-3">
         <div class="bg-light border rounded-3">
           <h3>City and Date</h3>
           <li>Temp:</li>
@@ -49,35 +49,35 @@
           <div class="container">
             <div class="row">
               <div class="col">
-                <div class="card" style="width: 10rem;">
+                <div class="card">
                   <div class="card-body">
                     This is some text within a card body.
                   </div>
                 </div>
               </div>
               <div class="col">
-                <div class="card" style="width: 10rem;">
+                <div class="card">
                   <div class="card-body">
                     This is some text within a card body.
                   </div>
                 </div>
               </div>
               <div class="col">
-                <div class="card" style="width: 10rem;">
+                <div class="card">
                   <div class="card-body">
                     This is some text within a card body.
                   </div>
                 </div>
               </div>
               <div class="col">
-                <div class="card" style="width: 10rem;">
+                <div class="card">
                   <div class="card-body">
                     This is some text within a card body.
                   </div>
                 </div>
               </div>
               <div class="col">
-                <div class="card" style="width: 10rem;">
+                <div class="card">
                   <div class="card-body">
                     This is some text within a card body.
                   </div>
