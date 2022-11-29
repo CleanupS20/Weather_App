@@ -5,10 +5,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Weather App</title>
+  <link rel="stylesheet" href="./assets/reset.css">
   <link rel="stylesheet" href="./assets/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js" integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
+
+
 <nav class="navbar" style="background-color: 	#00BFFF;">
   <div class="container-fluid">
     <img id="logo" src="./Weather-icon.png" alt="Logo" width="50" height="48" class="d-inline-block align-text-top">
@@ -16,71 +21,89 @@
   </div>
 </nav>
 
+
 <body>
   <div class="container-fluid pb-3">
     <div class="d-grid gap-3" style="grid-template-columns: 1fr 2fr;">
+      <!-- Left search field -->
       <div id="searchField" class="bg-light border rounded-3">
         <h2> Search for a City: </h2>
         <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label"></label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+          <input id="searchInput" class="form-control mr-sm-2" input type="text" placeholder="" aria-label="Search">
         </div>
-
         <div class="d-grid gap-2">
-          <button class="btn btn-primary" type="button">Search</button>
+          <button class="btn btn-primary" id="searchButton" type="button">Search</button>
         </div>
 
-        <ul class="list-group" id="commonCities">
-          <li class="list-group-item" id="City-1">Columbus</li>
-          <li class="list-group-item" id="City-2">Cleveland</li>
-          <li class="list-group-item" id="City-3">Los Angeles</li>
-          <li class="list-group-item" id="City-4">New York City</li>
+        <br>
+
+        <ul class="list-group" id="cityList">
+          <div></div>
         </ul>
       </div>
+
+      <!-- Right results field -->
       <div id="forecastField" class="bg-light border rounded-3">
-        <div class="bg-light border rounded-3">
-          <h3>City and Date</h3>
-          <li>Temp:</li>
-          <li>Wind:</li>
-          <li>Humidity:</li>
+        <!-- Daily Forecast -->
+        <div class="bg-light border rounded-3" id="daily-forecast">
+          <h2 class="row" id="City-name"> City</h2>
+          <div class="col">
+            <span class="row" id="date-today">Date</span>
+            <span id="icon-today"></span>
+            <span class="row" id="conditions-today">Conditions</span>
+            <span class="row" id="temp-today">Temperature</span>
+            <span class="row" id="humidity-today">Humidity</span>
+            <span class="row" id="wind-today">Wind Speed</span>
+          </div>
         </div>
+        <!-- 5 Day Forecast -->
         <div>
-          <h3>5-day Forecast:</h3>
+          <h2>5-day Forecast:</h2>
           <div class="container">
             <div class="row">
               <div class="col">
                 <div class="card">
-                  <div class="card-body">
-                    This is some text within a card body.
-                  </div>
+                  <h3 id="day-1">Date-1</h3>
+                  <span id="icon-1"></span>
+                  <span id="conditions-1">Conditions</span>
+                  <span id="temperature-1">Temperature</span>
+                  <span id="humidity-1">Humidity</span>
                 </div>
               </div>
               <div class="col">
                 <div class="card">
-                  <div class="card-body">
-                    This is some text within a card body.
-                  </div>
+                  <h3 id="day-2">Date-2</h3>
+                  <span id="icon-2"></span>
+                  <span id="conditions-2">Conditions</span>
+                  <span id="temperature-2">Temperature</span>
+                  <span id="humidity-2">Humidity</span>
                 </div>
               </div>
               <div class="col">
                 <div class="card">
-                  <div class="card-body">
-                    This is some text within a card body.
-                  </div>
+                  <h3 id="day-3">Date-3</h3>
+                  <span id="icon-3"></span>
+                  <span id="conditions-3">Conditions</span>
+                  <span id="temperature-3">Temperature</span>
+                  <span id="humidity-3">Humidity</span>
                 </div>
               </div>
               <div class="col">
                 <div class="card">
-                  <div class="card-body">
-                    This is some text within a card body.
-                  </div>
+                  <h3 id="day-4">Date-4</h3>
+                  <span id="icon-4"></span>
+                  <span id="conditions-4">Conditions</span>
+                  <span id="temperature-4">Temperature</span>
+                  <span id="humidity-4">Humidity</span>
                 </div>
               </div>
               <div class="col">
                 <div class="card">
-                  <div class="card-body">
-                    This is some text within a card body.
-                  </div>
+                  <h3 id="day-5">Date-5</h3>
+                  <span id="icon-5"></span>
+                  <span id="conditions-5">Conditions</span>
+                  <span id="temperature-5">Temperature</span>
+                  <span id="humidity-5">Humidity</span>
                 </div>
               </div>
             </div>
