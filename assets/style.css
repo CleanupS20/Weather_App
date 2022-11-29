@@ -1,8 +1,9 @@
 * {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 10px;
 }
 
-H1 {
+h1 {
     color: white;
     margin-right: 50px;
 }
@@ -12,22 +13,17 @@ H1 {
 
 }
 
-h2,
+h2 {
+    font-size: 2rem;
+
+}
+
 h3 {
-    padding: 10px;
-
+    font-size: 16px;
 }
 
-#searchField,
-#forecastFiel,
-li {
-    padding: 10px;
-}
 
-#City-1,
-#City-2,
-#City-3,
-#City-4 {
-    padding: 10px;
+
+.list-group-item {
     margin-top: 10px;
 }
