@@ -82,7 +82,7 @@ function getCoordinates(city) {
 // Get five day forecast
 
 function getFiveDayApi(latitude, longitude) {
-    var requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=imperial&exclude=minutely,hourly&appid=d91f911bcf2c0f925fb6535547a5ddc9`;
+    var requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=imperial&exclude=minutely,hourly&appid=${apiKey}`;
     fetch(requestUrl)
 
         .then(function (response) {
