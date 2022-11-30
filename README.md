@@ -21,7 +21,7 @@
  
 ## Visuals
 
-![Alt text](https://github.com/CleanupS20/Weather_App/blob/main/Assets/Images/Screenshot.gif)
+![Alt text](https://github.com/CleanupS20/Weather_App/blob/main/assets/Images/Screenshot.gif)
 
 ## Site
 
