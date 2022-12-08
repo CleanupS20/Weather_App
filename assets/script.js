@@ -66,7 +66,7 @@ function getWeather(city) {
 
 // Get latitude and longitude from input
 function getCoordinates(city) {
-    var requestUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + city + '&limit=5&appid=' + apiKey;
+    var requestUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + city + '&limit=5&appid=' + apiKey;
 
     fetch(requestUrl)
         .then(function (response) {
