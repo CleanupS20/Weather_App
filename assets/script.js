@@ -1,7 +1,6 @@
 // Global location variables
 // API Variable
 var apiKey = "d68e8235857126a61e366100ba5a750e"
-var savedCities = JSON.parse(window.localStorage.getItem("cityHistory"))
 
 
 // Step one: Add typed city to array when button is clicked.
@@ -22,6 +21,7 @@ function searchCity() {
 $("#searchButton").click(searchCity)
 
 function displaySearchedCity() {
+    var savedCities = JSON.parse(window.localStorage.getItem("cityHistory"))
     let listCities = document.getElementById("cityList")
     listCities.innerHTML = ""
     if (savedCities && savedCities.length) {
@@ -127,4 +127,5 @@ function getFiveDayApi(latitude, longitude) {
             let icon5 = `<img src="http://openweathermap.org/img/wn/${data.daily[5].weather[0].icon}@2x.png">`;
             $("#icon-5").html(icon5)
         })
+        displaySearchedCity()
 }
